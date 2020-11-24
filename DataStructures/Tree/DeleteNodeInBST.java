@@ -10,7 +10,11 @@ import java.util.List;
  * 		deletion of node with only one child
  * case 3:
  * 		deletion of node having two children.
- * 
+ * Time complexity:
+ * 		 In best case O(log n)
+ * 		 In worst case O(n)
+ * Space complexity:
+ *       O(1) in both best and worst cases.
  */
 public class DeleteNodeInBST {
 	Node root;
