@@ -48,16 +48,6 @@ public class InOrderSuccessorBST {
 		}
 		return node;
 	}
-	public void printTreeAsc(Node node) {
-		//Print binary search tree in ascending order...
-		if(node!=null) {
-			if(node.left!=null)
-				printTreeAsc(node.left);
-			System.out.println(node.data);
-			if(node.right!=null)
-				printTreeAsc(node.right);
-		}
-	}
 	public Node findNode(int data) {
 		Node temp = root;
 		while(temp!=null) {
