@@ -1,6 +1,8 @@
 package com.datastructures;
 /*
  * This linked list loop detection is based on Flyod's Algorithm....
+ * Expected time complexity : O(n)
+ * Expected auxiliary space : O(1)
  */
 public class LinkedList<T> {
 	Node head,tail;
