@@ -6,7 +6,7 @@ public class BSTDiameter {
 	 * Space: O(Height of the Tree).
 	 */
 	Node root;
-	static int currentDiameter = -1;
+	int currentDiameter = -1;
 	public class Node{
 		int data;
 		Node left;
@@ -46,7 +46,7 @@ public class BSTDiameter {
 			bst.insert(a[i], bst.root);
 		}
 		bst.diameterOfTree(bst.root);
-		System.out.println(currentDiameter);
+		System.out.println(bst.currentDiameter);
 	}
 
 }
