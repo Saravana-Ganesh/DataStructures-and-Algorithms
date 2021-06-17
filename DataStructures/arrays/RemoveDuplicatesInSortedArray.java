@@ -3,45 +3,26 @@ package com.geeks.arrays;
 import java.util.Arrays;
 
 public class RemoveDuplicatesInSortedArray {
-	/*public static int removeDuplicates(int[] arr) {
-		int size = 0;
-		boolean isDuplicateOccured = false;
-		int elementTobeChanged = 1;
-		for(int i=0;i<arr.length;i++) {
-			if(isDuplicateOccured) {
-				if(arr[elementTobeChanged]<arr[i]) {
-					arr[elementTobeChanged] = arr[i];
-					++elementTobeChanged;
-					++size;
-					isDuplicateOccured = false;
-					continue;
-				}
-				//arr[i] = Integer.MIN_VALUE;
-				continue;
-			}			
-			
-			if(arr[i]!=arr[elementTobeChanged]) {
-				++size;
-				++elementTobeChanged;
-				continue;
-			}else {
-				isDuplicateOccured = true;
-				continue;
-			}
-		}
-		return size;
-	}*/
 	public static void printArray(int arr[],int size) {
 		for(int i=0;i<size;i++) {
 			System.out.print(arr[i]+" ");
 		}
 	}
 	public static void main(String[] args) {
-		int arr[] = {2,2,2,2,2,2,2,2,22};
+		int arr[] = {10,20,30};
 		System.out.println(Arrays.toString(arr));
-		int size = RemoveDuplicatesInSortedArray.removeDuplicates(arr);
+		int size = RemoveDuplicatesInSortedArray.removeDuplicates1(arr);
 		System.out.println(Arrays.toString(arr));
 		RemoveDuplicatesInSortedArray.printArray(arr,size);
+	}
+	public static int removeDuplicates1(int[] arr) {
+		int res = 1;
+		for(int i=1;i<arr.length;i++) {
+			if(arr[i]!=arr[res-1]) {
+				arr[res++] = arr[i];
+			}
+		}
+		return res;
 	}
 	public static int removeDuplicates(int[] arr) {
 		int elementTobeChange = 1,size=0;
