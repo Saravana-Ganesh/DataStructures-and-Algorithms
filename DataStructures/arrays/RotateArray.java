@@ -1,7 +1,9 @@
-package com.geeks.arrays;
+package com.arrays;
+
+import java.util.Arrays;
 
 public class RotateArray {
-	
+
 	public static void rotateLeftWithGCD(int a[],int shiftValue) {
 		/*
 		 * This is based on jugglers algorithm
@@ -55,17 +57,39 @@ public class RotateArray {
 		}
 	}
 	private static void printArray(int[] a) {
-		System.out.println("");
+		//System.out.println("");
 		for(int i=0;i<a.length;i++)
 			System.out.print(a[i]+" ");
 	}
 	public static void main(String[] args) {
 		int a[] = {1,2,3,4,5,6,7};
-		RotateArray.rotateLeftWithGCD(a,3);
+		System.out.println("Left Rotate 3 of "+Arrays.toString(a));
+		RotateArray.rotateLeftWithGCD(a,3);		
 		RotateArray.printArray(a);
 		int b[] = {1,2,3,4,5,6,7};
-		RotateArray.rotateLeftWithoutGCD(b,3);
+		System.out.println("\nRight Rotate 3 of "+Arrays.toString(b));
+		RotateArray.rotateRightWithoutGCD(b,3);
 		RotateArray.printArray(b);
-	}
 
+	}
+	private static void rotateRightWithoutGCD(int[] a, int shiftValue) {
+		int count=0;
+		for(int i=0;count<a.length;i++) {
+			int j = i;
+			int temp = a[i];					
+			while(true) {
+				int d = j-shiftValue;
+				d = d<0?a.length+d:d;
+				if(d==i) {//Check whether it reaches Starting point
+					a[j] = temp;
+					++count;
+					break;
+				}
+				a[j] = a[d];
+				j = d;
+				++count;
+			}
+		}
+		
+	}
 }
